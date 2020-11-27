@@ -1,3 +1,7 @@
+#!/bin/bash
+
+#This is a testament to my laziness.
+
 echo "Go Go Gadget Robo Push!!!!!"
 
 git add *
