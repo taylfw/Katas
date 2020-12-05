@@ -126,7 +126,7 @@ function _if(bool, func1, func2) {
 // If anything in the text isn't a letter, ignore it and don't return it.
 
 // "a" = 1, "b" = 2, etc.
-
+/*
 function alphabetPosition(text) {
     const alph = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
     const alphBig = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
@@ -152,3 +152,62 @@ function alphabetPosition(text) {
   }
 
   alphabetPosition("The sunset sets at twelve o' clock.");
+  */
+//  Write a function that will find all the anagrams of a word from a list. You will be given two inputs a word and an array with words. You should return an array of all the anagrams or an empty array if there are none.
+
+//anagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada']) => ['aabb', 'bbaa']
+
+
+function anagrams(word, words) {
+    const dicedWord = word.split('').sort()
+    const anagarr = [];
+        words.forEach(element => {
+            let test = element.split('').sort()
+            if (test.join() === dicedWord.join()){
+                anagarr.push(element);
+
+            } 
+        });
+        console.log(anagarr);
+        return anagarr;
+}
+anagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada']);
+anagrams('racer', ['crazer', 'carer', 'racar', 'caers', 'racer']);
+anagrams('laser', ['lazing', 'lazy',  'lacer']);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
