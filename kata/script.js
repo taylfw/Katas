@@ -1,4 +1,5 @@
 
+'use strict'
 // function digital_root(n) {
 //     let num = n;
 //     let total = 0;
@@ -158,29 +159,90 @@ function alphabetPosition(text) {
 //anagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada']) => ['aabb', 'bbaa']
 
 
-function anagrams(word, words) {
-    const dicedWord = word.split('').sort()
-    const anagarr = [];
-        words.forEach(element => {
-            let test = element.split('').sort()
-            if (test.join() === dicedWord.join()){
-                anagarr.push(element);
+// function anagrams(word, words) {
+//     const dicedWord = word.split('').sort()
+//     const anagarr = [];
+//         words.forEach(element => {
+//             let test = element.split('').sort()
+//             if (test.join() === dicedWord.join()){
+//                 anagarr.push(element);
 
+//             } 
+//         });
+//         console.log(anagarr);
+//         return anagarr;
+// }
+// anagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada']);
+// anagrams('racer', ['crazer', 'carer', 'racar', 'caers', 'racer']);
+// anagrams('laser', ['lazing', 'lazy',  'lacer']);
+
+/*
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// A string is considered to be in title case if each word in the string is either (a) capitalised (that is, only the first letter of the word is in upper case) or (b) considered to be an exception and put entirely into lower case unless it is the first word, which is always capitalised.
+
+// Write a function that will convert a string into title case, given an optional list of exceptions (minor words). The list of minor words will be given as a string with each word separated by a space. Your function should ignore the case of the minor words string -- it should behave in the same way even if the case of the minor word string is changed.
+
+// ###Arguments (Haskell)
+
+// First argument: space-delimited list of minor words that must always be lowercase except for the first word in the string.
+// Second argument: the original string to be converted.
+// ###Arguments (Other languages)
+
+// First argument (required): the original string to be converted.
+// Second argument (optional): space-delimited list of minor words that must always be lowercase except for the first word in the string. The JavaScript/CoffeeScript tests will pass undefined when this argument is unused.
+*/
+
+function titleCase(title, minorWords) {
+
+    
+    if (title === ''){
+        return title
+    } else {
+        const dicedText = title.split(' ');
+
+    for (let i = 0; i < dicedText.length; i++) {
+        //Drop everything in the title array to lowercase
+        dicedText[i] = dicedText[i].toLowerCase();
+        if (minorWords){
+            const dontUse = minorWords.split(' ');
+            for (let j = 0; j < dontUse.length; j++) {
+                dontUse[j] = dontUse[j].toLowerCase();
+                // console.log(dontUse[j] + ' <--to that');
+                if (dicedText[i] === dicedText[0]){
+                    dicedText[i] = dicedText[i].charAt(0).toUpperCase() + dicedText[i].slice(1);
+                } else if (dicedText[i].toLowerCase() === dontUse[j].toLowerCase()){
+                    dicedText[i] = dicedText[i].toLowerCase()
+                    break
+                } else {
+                    dicedText[i] = dicedText[i].charAt(0).toUpperCase() + dicedText[i].slice(1);
+                    
+                }
+    
             } 
-        });
-        console.log(anagarr);
-        return anagarr;
+        } else {
+            dicedText[i] = dicedText[i].charAt(0).toUpperCase() + dicedText[i].slice(1);
+        }
+        
+    }
+
+    console.log(dicedText.join(' '));
+    return dicedText.join(' ')
+    
+     
 }
-anagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada']);
-anagrams('racer', ['crazer', 'carer', 'racar', 'caers', 'racer']);
-anagrams('laser', ['lazing', 'lazy',  'lacer']);
+    
+    
+};
+//Note to Frank. Only the last word in the donotuse array is working correctly.
 
-
-
-
-
-
-
+//Testing the function
+titleCase('')
+titleCase('of a clash an the of KINGS', 'of a an the')
+titleCase('THE WIND IN THE WILLOWS', 'The In')
+titleCase('the quick brown fox')
 
 
 
