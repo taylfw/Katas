@@ -292,6 +292,8 @@ C          100
 D          500
 M          1,000
 
+
+//The function below looks like Erik Carl's "very hungry caterpillar", this is intentional.
 function solution(number){
     let n = number;
     const romanNum = [];
@@ -517,25 +519,48 @@ pigIt('Pig latin is cool')
 pigIt('Frank Rules !')
 */
 
-const divisors = function(n){
-    const arr = []; 
+// const divisors = function(n){
+//     const arr = []; 
     
-    for(let i = 0; i < n; i++ ){
-        if (n % i === 0 ){
-            let tempNum = n/i
-            arr.push(tempNum)
-        }
+//     for(let i = 0; i < n; i++ ){
+//         if (n % i === 0 ){
+//             let tempNum = n/i
+//             arr.push(tempNum)
+//         }
+//     }
+//     arr.push(1)
+
+//     const answer = arr.length
+//     console.log(answer, arr);
+//     return answer
+
+// }
+
+
+// divisors(4)
+// divisors(5)
+// divisors(12)
+// divisors(30)
+
+function DNAStrand(dna){
+    
+    const newArr = [];
+    const obj = {
+        'T' : 'A',
+        'A' : 'T',
+        'C' : 'G',
+        'G' : 'C',
+    } 
+    const dicedText = dna.split('')
+
+    for(let i = 0; i < dicedText.length; i++){
+        newArr.push(obj[dicedText[i]]);
     }
-    arr.push(1)
+    
+    let newStrand = newArr.join('');
+    return newStrand;
 
-    const answer = arr.length
-    console.log(answer, arr);
-    return answer
+  }
 
-}
-
-
-divisors(4)
-divisors(5)
-divisors(12)
-divisors(30)
+DNAStrand ("ATTGC") // return "TAACG"
+DNAStrand ("GTAT") // return "CATA" 
