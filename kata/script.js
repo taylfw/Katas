@@ -542,25 +542,51 @@ pigIt('Frank Rules !')
 // divisors(12)
 // divisors(30)
 
-function DNAStrand(dna){
+// function DNAStrand(dna){
     
-    const newArr = [];
-    const obj = {
-        'T' : 'A',
-        'A' : 'T',
-        'C' : 'G',
-        'G' : 'C',
-    } 
-    const dicedText = dna.split('')
+//     const newArr = [];
+//     const obj = {
+//         'T' : 'A',
+//         'A' : 'T',
+//         'C' : 'G',
+//         'G' : 'C',
+//     } 
+//     const dicedText = dna.split('')
 
-    for(let i = 0; i < dicedText.length; i++){
-        newArr.push(obj[dicedText[i]]);
-    }
+//     for(let i = 0; i < dicedText.length; i++){
+//         newArr.push(obj[dicedText[i]]);
+//     }
     
-    let newStrand = newArr.join('');
-    return newStrand;
+//     let newStrand = newArr.join('');
+//     return newStrand;
 
-  }
+//   }
 
-DNAStrand ("ATTGC") // return "TAACG"
-DNAStrand ("GTAT") // return "CATA" 
+// DNAStrand ("ATTGC") // return "TAACG"
+// DNAStrand ("GTAT") // return "CATA" 
+
+
+//Kata from July 17th, 2021
+// function solution(number){
+//     let arr = []
+//     let sumArr = []
+//     if(number <= 0){
+//         return 0
+//     }
+//     for(i = 0; i < number; i++){
+//         arr.push(i)
+//     }
+//     for(i = 0; i < arr.length; i++) {
+//         if(arr[i] % 3 === 0 || arr[i] % 5 === 0){
+//             sumArr.push(arr[i])
+//         }
+//     }
+    
+//     let sumNum = sumArr[0]
+//     for(i = 1; i < sumArr.length; i++){
+//         sumNum += sumArr[i]
+//     }
+    
+//     return sumNum
+//   }
+
