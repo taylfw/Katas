@@ -1,30 +1,26 @@
-
-'use strict'
+"use strict";
 // function digital_root(n) {
 //     let num = n;
 //     let total = 0;
 
 //     while (num) {
 //         total += num % 10;
-//         num = Math.floor(num/10); 
+//         num = Math.floor(num/10);
 //         console.log(num, total);
 //     }
-    
+
 //     if (total > 9) {
 //         let secondTotal = digital_root(total);
 //         return secondTotal;
-        
+
 //     } else if (total <= 9 ) {
 //         return total;
-//     } 
-    
-
+//     }
 
 //   };
 
-// console.log(digital_root(456)); 
+// console.log(digital_root(456));
 // console.log(digital_root(16));
-
 
 /////////////////////////////////////////////////////////////////
 // Your goal in this kata is to implement a difference function, which subtracts one list from another and returns the result.
@@ -159,7 +155,6 @@ function alphabetPosition(text) {
 
 //anagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada']) => ['aabb', 'bbaa']
 
-
 // function anagrams(word, words) {
 //     const dicedWord = word.split('').sort()
 //     const anagarr = [];
@@ -168,7 +163,7 @@ function alphabetPosition(text) {
 //             if (test.join() === dicedWord.join()){
 //                 anagarr.push(element);
 
-//             } 
+//             }
 //         });
 //         console.log(anagarr);
 //         return anagarr;
@@ -198,7 +193,6 @@ function alphabetPosition(text) {
 
 // function titleCase(title, minorWords) {
 
-    
 //     if (title === ''){
 //         return title
 //     } else {
@@ -219,25 +213,22 @@ function alphabetPosition(text) {
 //                     break
 //                 } else {
 //                     dicedText[i] = dicedText[i].charAt(0).toUpperCase() + dicedText[i].slice(1);
-                    
+
 //                 }
-    
-//             } 
+
+//             }
 //         } else {
 //             dicedText[i] = dicedText[i].charAt(0).toUpperCase() + dicedText[i].slice(1);
 //         }
-        
+
 //     }
 
 //     console.log(dicedText.join(' '));
 //     return dicedText.join(' ')
-    
-     
-// }
-    
-    
-// };
 
+// }
+
+// };
 
 // //Testing the function
 // titleCase('')
@@ -249,7 +240,6 @@ function alphabetPosition(text) {
 //     const arr = numbers.sort(function(a, b){return a-b;});
 //     return arr[0] + arr[1]
 // };
-
 
 // sumTwoSmallestNumbers([5, 8, 12, 19, 22]);
 // sumTwoSmallestNumbers([15, 28, 4, 2, 43]);
@@ -267,7 +257,7 @@ function alphabetPosition(text) {
 //         numArr.push(num);
 //     }
 //     numArr = numArr.sort(function(a, b){return a-b});
-    
+
 //     console.log(numArr[0]);
 // };
 
@@ -358,7 +348,7 @@ function solution(number){
     }
     
 };
-*/
+
 
 //Complete the solution so that it splits the string into pairs of two characters. If the string
 //contains an odd number of characters then it should be replaced with an underscore('_')
@@ -520,8 +510,8 @@ pigIt('Frank Rules !')
 */
 
 // const divisors = function(n){
-//     const arr = []; 
-    
+//     const arr = [];
+
 //     for(let i = 0; i < n; i++ ){
 //         if (n % i === 0 ){
 //             let tempNum = n/i
@@ -536,57 +526,93 @@ pigIt('Frank Rules !')
 
 // }
 
-
 // divisors(4)
 // divisors(5)
 // divisors(12)
 // divisors(30)
 
 // function DNAStrand(dna){
-    
+
 //     const newArr = [];
 //     const obj = {
 //         'T' : 'A',
 //         'A' : 'T',
 //         'C' : 'G',
 //         'G' : 'C',
-//     } 
+//     }
 //     const dicedText = dna.split('')
 
 //     for(let i = 0; i < dicedText.length; i++){
 //         newArr.push(obj[dicedText[i]]);
 //     }
-    
+
 //     let newStrand = newArr.join('');
 //     return newStrand;
 
 //   }
 
 // DNAStrand ("ATTGC") // return "TAACG"
-// DNAStrand ("GTAT") // return "CATA" 
+// DNAStrand ("GTAT") // return "CATA"
 
-
-//Kata from July 17th, 2021
-// function solution(number){
-//     let arr = []
-//     let sumArr = []
-//     if(number <= 0){
-//         return 0
+// Kata from July 17th, 2021
+// function solution(number) {
+//   let arr = [];
+//   let sumArr = [];
+//   if (number <= 0) {
+//     return 0;
+//   }
+//   for (let i = 0; i < number; i++) {
+//     arr.push(i);
+//   }
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] % 3 === 0 || arr[i] % 5 === 0) {
+//       sumArr.push(arr[i]);
 //     }
-//     for(i = 0; i < number; i++){
-//         arr.push(i)
-//     }
-//     for(i = 0; i < arr.length; i++) {
-//         if(arr[i] % 3 === 0 || arr[i] % 5 === 0){
-//             sumArr.push(arr[i])
-//         }
-//     }
-    
-//     let sumNum = sumArr[0]
-//     for(i = 1; i < sumArr.length; i++){
-//         sumNum += sumArr[i]
-//     }
-    
-//     return sumNum
 //   }
 
+//   let sumNum = sumArr[0];
+//   for (let i = 1; i < sumArr.length; i++) {
+//     sumNum += sumArr[i];
+//   }
+//   console.log(sumNum);
+//   return sumNum;
+// }
+
+// solution(1234);
+
+function evenOrOdd(str) {
+  const arr = [...str];
+  const even = [];
+  const odd = [];
+
+  console.log(arr);
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 === 0) {
+      even.push(Number(arr[i]));
+    } else {
+      odd.push(Number(arr[i]));
+    }
+  }
+
+  function addArr(array) {
+    let counter = 0;
+    array.forEach((element) => {
+      counter = counter + element;
+    });
+    return counter;
+  }
+
+  const finEven = addArr(even);
+
+  const finOdd = addArr(odd);
+
+  if (finEven > finOdd) {
+    return "Even is greater than Odd";
+  } else if (finEven < finOdd) {
+    return "Odd is greater than Even";
+  } else {
+    return "Even and Odd are the same";
+  }
+}
+
+evenOrOdd("21343452034957293459083415985");
