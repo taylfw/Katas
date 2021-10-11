@@ -580,39 +580,97 @@ pigIt('Frank Rules !')
 
 // solution(1234);
 
-function evenOrOdd(str) {
-  const arr = [...str];
-  const even = [];
-  const odd = [];
+// function evenOrOdd(str) {
+//   const arr = [...str];
+//   const even = [];
+//   const odd = [];
 
-  console.log(arr);
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] % 2 === 0) {
-      even.push(Number(arr[i]));
-    } else {
-      odd.push(Number(arr[i]));
+//   console.log(arr);
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] % 2 === 0) {
+//       even.push(Number(arr[i]));
+//     } else {
+//       odd.push(Number(arr[i]));
+//     }
+//   }
+
+//   function addArr(array) {
+//     let counter = 0;
+//     array.forEach((element) => {
+//       counter = counter + element;
+//     });
+//     return counter;
+//   }
+
+//   const finEven = addArr(even);
+
+//   const finOdd = addArr(odd);
+
+//   if (finEven > finOdd) {
+//     return "Even is greater than Odd";
+//   } else if (finEven < finOdd) {
+//     return "Odd is greater than Even";
+//   } else {
+//     return "Even and Odd are the same";
+//   }
+// }
+
+// evenOrOdd("21343452034957293459083415985");
+
+
+
+
+
+
+
+
+function computerToPhone(numbers){
+    const arr = [...numbers];
+    const invertArr = [];
+
+    const phonePad = {
+        '0': '0',
+        '1': '7',
+        '2': '8',
+        '3': '9',
+        '4': '4',
+        '5': '5',
+        '6': '6',
+        '7': '1',
+        '8': '2',
+        '9': '3'
     }
+
+
+    for(let i = 0; i < arr.length; i++){
+        invertArr.push(phonePad[arr[i]]);
+    }
+
+    console.log(invertArr.join(''));
+    return invertArr.join('');
+
   }
 
-  function addArr(array) {
-    let counter = 0;
-    array.forEach((element) => {
-      counter = counter + element;
-    });
-    return counter;
-  }
 
-  const finEven = addArr(even);
+  computerToPhone("0789456123")
 
-  const finOdd = addArr(odd);
 
-  if (finEven > finOdd) {
-    return "Even is greater than Odd";
-  } else if (finEven < finOdd) {
-    return "Odd is greater than Even";
-  } else {
-    return "Even and Odd are the same";
-  }
-}
 
-evenOrOdd("21343452034957293459083415985");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
